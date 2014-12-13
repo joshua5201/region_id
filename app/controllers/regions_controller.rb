@@ -1,6 +1,6 @@
 class RegionsController < ApplicationController
   before_action :set_region, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :except => [:show]
+  before_action :authenticate_user!, :except => [:show, :query]
 
   # GET /regions
   # GET /regions.json
@@ -11,6 +11,16 @@ class RegionsController < ApplicationController
   # GET /regions/1
   # GET /regions/1.json
   def show
+  end
+
+  def query
+    @regions = params[:ssids].collect do |ssid|
+      begin
+        Region.friendly.find(ssid)
+      rescue ActiveRecord::RecordNotFound
+        nil
+      end
+    end
   end
 
   # GET /regions/new

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<% @regions.each do |region| %>
+  <% if region == nil %> 
+    <% next %>
+  <% end %>
+<p>
+  <strong>Name:</strong>
+  <%= region.name %>
+</p>
+<p>
+  <strong>SSID:</strong>
+  <%= region.ssid %>
+</p>
+
+<strong>Entries:</strong>
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+  </tr>
+</thead>
+<tbody>
+<% region.entries.each do |t| %>
+  <tr>
+    <td><%= t.name %></td>
+    <td><%= t.content %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+<br>
+<br>
+<% end %>

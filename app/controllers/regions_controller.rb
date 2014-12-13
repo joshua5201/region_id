@@ -66,13 +66,14 @@ class RegionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_region
-      @region = Region.find(params[:id])
+      @region = Region.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def region_params
       params.require(:region).permit(
         :name, 
+        :ssid,
         entries_attributes:
         [
           :id,

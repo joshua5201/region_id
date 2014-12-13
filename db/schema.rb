@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213112507) do
+ActiveRecord::Schema.define(version: 20141213163353) do
 
   create_table "entries", force: true do |t|
     t.integer  "region_id"
@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 20141213112507) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "ssid"
   end
 
+  add_index "regions", ["ssid"], name: "index_regions_on_ssid", unique: true
   add_index "regions", ["user_id"], name: "index_regions_on_user_id"
 
   create_table "users", force: true do |t|

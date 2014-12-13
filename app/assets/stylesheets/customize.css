@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Gandhi;
+    src: url(GandhiSans-Regular.otf);
+    font-weight: normal;
+}
+@font-face {
+	font-family: Gandhi;
+	src: url(GandhiSans-Bold.otf);
+	font-weight: bold;
+}
+@font-face{
+	font-family: Gandhi;
+	src: url(GandhiSans-Italic.otf);
+	font-style: italic;
+}
+@font-face{
+	font-family: Gandhi;
+	src: url(GandhiSans-BoldItalic.otf);
+	font-style: italic;
+	font-weight: bold;
+}
+body{
+	background:#cee4ac;
+}
+.navbar-brand{
+	height:50px;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+.navbar-default .navbar-link {
+  color: #fff;
+}
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+.navbar-default .navbar-text {
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-brand{
+	padding: 9px 15px;
+
+}
+.nav > li > a{
+	font-size: 16pt;
+}
+
+div {
+    font-family: Gandhi;
+}
+.nav {
+	font-family: Gandhi;
+}

@@ -1,11 +1,11 @@
 class RegionsController < ApplicationController
   before_action :set_region, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
+  before_action :authenticate_user!, :except => [:show]
 
   # GET /regions
   # GET /regions.json
   def index
-    @regions = Region.all
+    @regions = current_user.regions
   end
 
   # GET /regions/1
@@ -26,6 +26,7 @@ class RegionsController < ApplicationController
   # POST /regions.json
   def create
     @region = Region.new(region_params)
+    @region.user = current_user
 
     respond_to do |format|
       if @region.save

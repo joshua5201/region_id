@@ -4,32 +4,15 @@
   <% if region == nil %> 
     <% next %>
   <% end %>
-<p>
-  <strong>Name:</strong>
-  <%= region.name %>
-</p>
-<p>
-  <strong>SSID:</strong>
-  <%= region.ssid %>
-</p>
-
-<strong>Entries:</strong>
-<table>
-<thead>
-  <tr>
-    <th>Name</th>
-    <th>Content</th>
-  </tr>
-</thead>
-<tbody>
-<% region.entries.each do |t| %>
-  <tr>
-    <td><%= t.name %></td>
-    <td><%= t.content %></td>
-  </tr>
-<% end %>
-</tbody>
-</table>
-<br>
+	<% region.entries.each do |t| %>
+<div class="list-group">
+  <h2 class="text-center"><%= region.name %></h2>
+	<a class="list-group-item">
+		<h3 class="list-group-item-heading"><%= t.name %></h3>
+		<hr>
+    <p class="list-group-item-text"><%= t.content %></p>
+	</a>
+</div>
+	<% end %>
 <br>
 <% end %>

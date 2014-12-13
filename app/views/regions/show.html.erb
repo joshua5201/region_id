@@ -1,34 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div>
+	<p id="notice"><%= notice %></p>
+	<h1 class="text-center"><%= @region.name %><!--<%= @region.ssid %>--></h1>
+</div>
+<!-- <ul> -->
+<div class="list-group">
+	<% @region.entries.each do |t| %>
+	<a class="list-group-item">
+		<h3 class="list-group-item-heading"><%= t.name %></h3>
+		<hr>
+    	<p class="list-group-item-text"><%= t.content %></p>
+	</a>
+	<% end %>
+</div>
+<!--</ul>-->
 
-<p>
-  <strong>Name:</strong>
-  <%= @region.name %>
-</p>
-<p>
-  <strong>SSID:</strong>
-  <%= @region.ssid %>
-</p>
-
-<strong>Entries:</strong>
-<table>
-<thead>
-  <tr>
-    <th>Name</th>
-    <th>Content</th>
-    <th></th>
-  </tr>
-</thead>
-<tbody>
-<% @region.entries.each do |t| %>
-  <tr>
-    <td><%= t.name %></td>
-    <td><%= t.content %></td>
-    <td><%= image_tag (t.picture) if t.picture? %></td>
-  </tr>
+<% user_signed_in? %>
+<%  if current_user == @region.user %>
+<div class="text-center">
+	<%= link_to 'Edit', edit_region_path(@region) , :class => "btn btn-default" %> |
+	<%= link_to 'Back', regions_path , :class => "btn btn-default"%>
+</div>
 <% end %>
-</tbody>
-</table>
-<%= @region.updated_at %>
-
-<%= link_to 'Edit', edit_region_path(@region) %> |
-<%= link_to 'Back', regions_path %>

@@ -1,14 +1,20 @@
 <h1>Listing regions</h1>
+<p class="text-right"><%= link_to 'New Region', new_region_path, :class => "btn btn-default" %></p>
+<table class = "table table-hover">
+  <thead>
+      <td>RegionName</td><td>SSID</td><td>Manipulation</td>
 
-<hr>
-    <% @regions.each do |region| %>
-      
-        <big><%= region.name %></big>
-        <%= region.ssid %>
-        <%= link_to 'Show', region, :class => "btn btn-default" %>
-        <%= link_to 'Edit', edit_region_path(region), :class => "btn btn-default" %>
-        <%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
-        <br>
+  </thead>
+  <tbody>
+    <% @regions.each do |region| %>  
+      <tr>
+        <td><h4><%= region.name %></h4></td>
+        <td><h5><%= region.ssid %></h5></td>
+        <td><%= link_to 'Show', region, :class => "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_region_path(region), :class => "btn btn-default" %></td>
+        <td><%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %></td>
+      </tr>
     <% end %>
+    </tbody>
+</table>
 
-<%= link_to 'New Region', new_region_path, :class => "btn btn-default" %>

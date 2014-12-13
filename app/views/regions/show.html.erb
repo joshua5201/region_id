@@ -5,5 +5,23 @@
   <%= @region.name %>
 </p>
 
+<strong>Entries:</strong>
+<table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+  </tr>
+</thead>
+<tbody>
+<% @region.entries.each do |t| %>
+  <tr>
+    <td><%= t.name %></td>
+    <td><%= t.content %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
 <%= link_to 'Edit', edit_region_path(@region) %> |
 <%= link_to 'Back', regions_path %>

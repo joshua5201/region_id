@@ -1,14 +1,27 @@
 <h1>Listing regions</h1>
 
 <hr>
-    <% @regions.each do |region| %>
-      
-        <big><%= region.name %></big>
-        <%= region.ssid %>
-        <%= link_to 'Show', region, :class => "btn btn-default" %>
-        <%= link_to 'Edit', edit_region_path(region), :class => "btn btn-default" %>
-        <%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+    <% @regions.each do |region| %>  
+    <tr>
+      <td>  <big><%= region.name %></big></td>
+      <td>  <%= region.ssid %></td>
+      <td>  <%= link_to 'Show', region, :class => "btn btn-default" %> | </td>
+      <td>  <%= link_to 'Edit', edit_region_path(region), :class => "btn btn-default" %> | </td>
+      <td>  <%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %></td>
         <br>
+    </tr>
     <% end %>
-
+</tbody>
+</table>
 <%= link_to 'New Region', new_region_path, :class => "btn btn-default" %>

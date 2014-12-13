@@ -4,11 +4,11 @@
     <% @regions.each do |region| %>
       
         <big><%= region.name %></big>
+        <%= region.ssid %>
         <%= link_to 'Show', region, :class => "btn btn-default" %>
         <%= link_to 'Edit', edit_region_path(region), :class => "btn btn-default" %>
         <%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
         <br>
     <% end %>
 
-<br>
 <%= link_to 'New Region', new_region_path, :class => "btn btn-default" %>

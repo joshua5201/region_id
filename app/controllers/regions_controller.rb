@@ -1,6 +1,7 @@
 class RegionsController < ApplicationController
   before_action :set_region, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:show, :query]
+  before_action :authenticate_owner!, only: [:edit, :update]
 
   # GET /regions
   # GET /regions.json
@@ -89,8 +90,15 @@ class RegionsController < ApplicationController
           :id,
           :name,
           :content,
+          :picture,
           :_destroy
         ]
       )
+    end
+    
+    def authenticate_owner!
+      if not current_user.id == @region.user_id
+        redirect_to @region, :notice => "你壞壞"
+      end
     end
 end

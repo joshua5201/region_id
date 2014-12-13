@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213163353) do
+ActiveRecord::Schema.define(version: 20141213174042) do
 
   create_table "entries", force: true do |t|
     t.integer  "region_id"
     t.string   "name"
-    t.string   "content"
+    t.text     "content",    limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture"
   end
 
   add_index "entries", ["region_id"], name: "index_entries_on_region_id"

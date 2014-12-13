@@ -15,6 +15,7 @@
   <tr>
     <th>Name</th>
     <th>Content</th>
+    <th></th>
   </tr>
 </thead>
 <tbody>
@@ -22,10 +23,12 @@
   <tr>
     <td><%= t.name %></td>
     <td><%= t.content %></td>
+    <td><%= image_tag (t.picture) if t.picture? %></td>
   </tr>
 <% end %>
 </tbody>
 </table>
+<%= @region.updated_at %>
 
 <%= link_to 'Edit', edit_region_path(@region) %> |
 <%= link_to 'Back', regions_path %>

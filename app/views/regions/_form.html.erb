@@ -26,6 +26,9 @@
     <%= t.text_field :name %>
     <%= t.label :content %>
     <%= t.text_area :content %>
+    (or perhaps you would like to upload a picture)
+    <%= t.label :picture %>
+    <%= t.file_field :picture %>
     <%= t.link_to_remove "Remove this entry" %>
   <% end %>
   <%= f.link_to_add "Add a entry", :entries %>

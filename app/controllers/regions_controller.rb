@@ -79,6 +79,7 @@ class RegionsController < ApplicationController
           :id,
           :name,
           :content,
+          :picture,
           :_destroy
         ]
       )

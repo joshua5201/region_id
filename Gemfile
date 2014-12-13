@@ -37,6 +37,8 @@ gem 'spring',        group: :development
 # nested form: https://github.com/ryanb/nested_form
 gem "nested_form"
 
+# carrierwave, upload handler: https://github.com/carrierwaveuploader/carrierwave
+gem "carrierwave"
 gem "mini_magick"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

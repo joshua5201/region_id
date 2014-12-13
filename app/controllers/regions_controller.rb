@@ -9,6 +9,8 @@ class RegionsController < ApplicationController
     @regions = current_user.regions
   end
 
+  def about
+  end
   # GET /regions/1
   # GET /regions/1.json
   def show

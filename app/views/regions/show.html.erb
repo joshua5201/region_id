@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div>
+	<p id="notice"><%= notice %></p>
+	<h1 class="text-center"><%= @region.name %><!--<%= @region.ssid %>--></h1>
+</div>
+<!-- <ul> -->
+<div class="list-group">
+	<% @region.entries.each do |t| %>
+	<a class="list-group-item">
+		<h3 class="list-group-item-heading"><%= t.name %></h3>
+		<hr>
+    	<p class="list-group-item-text"><%= t.content %></p>
+	</a>
+	<% end %>
+</div>
+<!--</ul>-->
 
-
-  <h1><%= @region.name %>
-  <sub><%= @region.ssid %></sub></h1>
-
-<ul>
-<% @region.entries.each do |t| %>
-    <li>
-    <h3><%= t.name %></h3>
-    <p><%= t.content %></p>
-    </li>
-<% end %>
-</ul>
 <% user_signed_in? %>
 <%  if current_user == @region.user %>
-<%= link_to 'Edit', edit_region_path(@region) , :class => "btn btn-default" %> |
-<%= link_to 'Back', regions_path , :class => "btn btn-default"%>
+<div class="text-center">
+	<%= link_to 'Edit', edit_region_path(@region) , :class => "btn btn-default" %> |
+	<%= link_to 'Back', regions_path , :class => "btn btn-default"%>
+</div>
 <% end %>

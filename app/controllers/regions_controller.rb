@@ -75,8 +75,10 @@ class RegionsController < ApplicationController
         :name, 
         entries_attributes:
         [
+          :id,
           :name,
-          :content
+          :content,
+          :_destroy
         ]
       )
     end

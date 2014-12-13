@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 #  get 'regions/:ssid' => 'regions#show'
   get 'regions/query' => 'regions#query'
+  get 'regions/about' => 'regions#about'
   resources :regions
 
   # The priority is based upon order of creation: first created -> highest priority.

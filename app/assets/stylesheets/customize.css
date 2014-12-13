@@ -1,21 +1,21 @@
 @font-face {
-    font-family: Gandhi;
-    src: url(GandhiSans-Regular.otf);
+    font-family: "Gandhi";
+    src: url("/fonts/GandhiSans-Regular.otf");
     font-weight: normal;
 }
 @font-face {
-	font-family: Gandhi;
-	src: url(GandhiSans-Bold.otf);
+	font-family: "Gandhi";
+	src: url("/fonts/GandhiSans-Bold.otf");
 	font-weight: bold;
 }
 @font-face{
-	font-family: Gandhi;
-	src: url(GandhiSans-Italic.otf);
+	font-family: "Gandhi";
+	src: url("/fonts/GandhiSans-Italic.otf");
 	font-style: italic;
 }
 @font-face{
-	font-family: Gandhi;
-	src: url(GandhiSans-BoldItalic.otf);
+	font-family: "Gandhi";
+	src: url("/fonts/GandhiSans-BoldItalic.otf");
 	font-style: italic;
 	font-weight: bold;
 }
@@ -55,10 +55,16 @@ body{
 .nav > li > a{
 	font-size: 16pt;
 }
-
+.navbar-nav{
+	padding:;
+}
 div {
-    font-family: Gandhi;
+    font-family: "Gandhi";
+    font-size: 14pt;
 }
 .nav {
-	font-family: Gandhi;
+	font-family: "Gandhi";
+}
+.well p{
+	font-size: 12pt;
 }

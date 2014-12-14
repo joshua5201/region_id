@@ -9,6 +9,7 @@
         <h3 class="list-group-item-heading"><%= t.name %></h3>
         <hr>
         <p class="list-group-item-text"><%= t.content %></p>
+<p class="list-group-item-text"><%= image_tag (t.picture) if t.picture? %></p>
       </a>
     <% end %>
   </div>

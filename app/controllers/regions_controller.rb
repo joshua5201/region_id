@@ -24,6 +24,10 @@ class RegionsController < ApplicationController
         nil
       end
     end
+    @regions = @regions.select{|a| not a.nil?}
+    if @regions.empty?
+      flash[:notice] = "No Spot Information Available."
+    end
   end
 
   # GET /regions/new

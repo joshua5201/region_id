@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @region %> |
-<%= link_to 'Back', regions_path %>
+<div class="text-center">
+	<%= link_to 'Show', @region,:class => "btn btn-default" %> |
+	<%= link_to 'Back', regions_path,:class => "btn btn-default" %>
+</div>

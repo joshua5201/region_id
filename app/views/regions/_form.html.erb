@@ -19,21 +19,25 @@
     <%= f.label :ssid %><br>
     <%= f.text_field :ssid %>
   </div>
+    <div>
+      <div class="header">
+        <h3><%= f.label :entries %><small> you can add entries by press the bottom</small></h3>
+      </div>
+      <%= f.fields_for :entries do |t| %>
+        <%= t.label :name %><br>
+        <%= t.text_field :name ,:class =>"form-control",:placeholder=>"Please describle the type of info"  %><br>
+        <%= t.label :content %><br>
+        <%= t.text_area :content ,:class=>"form-control" ,:rows=>"3"%><br>
+        <h6>(or perhaps you would like to upload a picture)</h6>
+        <%= t.label :picture %><br>
+        <%= t.file_field :picture %><br>
+        <%= t.link_to_remove "Remove this entry" ,:class => "btn btn-default" %>
+        <hr>
+      <% end %>
+    </div>
+    <%= f.link_to_add "Add a entry", :entries ,:class => "btn btn-default"%>
 
-  <%= f.label :entries %>
-  <%= f.fields_for :entries do |t| %>
-    <%= t.label :name %>
-    <%= t.text_field :name %>
-    <%= t.label :content %>
-    <%= t.text_area :content %>
-    (or perhaps you would like to upload a picture)
-    <%= t.label :picture %>
-    <%= t.file_field :picture %>
-    <%= t.link_to_remove "Remove this entry" %>
-  <% end %>
-  <%= f.link_to_add "Add a entry", :entries %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <% end %>

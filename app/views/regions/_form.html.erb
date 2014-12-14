@@ -21,7 +21,7 @@
   </div>
     <div>
       <div class="header">
-        <h3><%= f.label :entries %><small> you can add entries by press the bottom</small></h3>
+        <h3><%= f.label :entries %></h3>
       </div>
       <%= f.fields_for :entries do |t| %>
         <%= t.label :name %><br>
@@ -35,7 +35,7 @@
         <hr>
       <% end %>
     </div>
-    <%= f.link_to_add "Add a entry", :entries ,:class => "btn btn-default"%>
+    <%= f.link_to_add "Add an Entry", :entries ,:class => "btn btn-default"%>
 
     <div class="actions">
       <%= f.submit :class => "btn btn-default" %>

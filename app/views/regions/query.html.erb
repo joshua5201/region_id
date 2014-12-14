@@ -4,14 +4,13 @@
 <% @regions.each do |region| %>
   <h2 class="text-center"><%= region.name %></h2>
   <div class="list-group">
-  <% region.entries.each do |t| %>
+    <% region.entries.each do |t| %>
       <a class="list-group-item">
         <h3 class="list-group-item-heading"><%= t.name %></h3>
         <hr>
         <p class="list-group-item-text"><%= t.content %></p>
       </a>
-  <% end %>
+    <% end %>
   </div>
-  <br>
 <% end %>
 

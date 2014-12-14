@@ -19,7 +19,7 @@ class RegionsController < ApplicationController
   def query
     @regions = params[:ssids].collect do |ssid|
       begin
-        Region.friendly.find(ssid)
+        Region.friendly.find(ssid.downcase)
       rescue ActiveRecord::RecordNotFound
         nil
       end
@@ -44,6 +44,7 @@ class RegionsController < ApplicationController
   def create
     @region = Region.new(region_params)
     @region.user = current_user
+    @region.ssid = @region.ssid.downcase
 
     respond_to do |format|
       if @region.save
@@ -59,6 +60,7 @@ class RegionsController < ApplicationController
   # PATCH/PUT /regions/1
   # PATCH/PUT /regions/1.json
   def update
+    @region.ssid = @region.ssid.downcase
     respond_to do |format|
       if @region.update(region_params)
         format.html { redirect_to @region, notice: 'Region was successfully updated.' }

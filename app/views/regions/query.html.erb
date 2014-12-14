@@ -1,18 +1,18 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-warning" role="alert"><%= notice %></div>
+<% end %>
 
 <% @regions.each do |region| %>
-  <% if region == nil %> 
-    <% next %>
-  <% end %>
-	<% region.entries.each do |t| %>
-<div class="list-group">
   <h2 class="text-center"><%= region.name %></h2>
-	<a class="list-group-item">
-		<h3 class="list-group-item-heading"><%= t.name %></h3>
-		<hr>
-    <p class="list-group-item-text"><%= t.content %></p>
-	</a>
-</div>
-	<% end %>
-<br>
+    <div class="list-group">
+  <% region.entries.each do |t| %>
+      <a class="list-group-item">
+        <h3 class="list-group-item-heading"><%= t.name %></h3>
+        <hr>
+        <p class="list-group-item-text"><%= t.content %></p>
+      </a>
+  <% end %>
+    </div>
+  <br>
 <% end %>
+
